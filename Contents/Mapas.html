@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+
+    <title>Google maps API</title>
+    <!-- Se carga el script de la API de Google Maps de manera asíncrona.
+         La clave API se pasa a través del parámetro "key", 
+         y "callback=console.debug" define que cuando el script se haya cargado
+         ejecute la función console.debug (una función vacía en este caso). 
+         También se incluyen las bibliotecas de "maps" y "marker" para poder usar
+         funcionalidades de mapas y marcadores. La versión es "beta". -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=(Inserte api aqui )&callback=console.debug&libraries=maps,marker&v=beta">
+        </script>
+    <style>
+        /* Se define el estilo del mapa:
+           El componente "gmp-map" es un Web Component que representa el contenedor del mapa.
+           Aquí se especifica que debe ocupar el 100% de la altura disponible. */
+        gmp-map {
+            height: 100%;
+        }
+
+        /* Estilos para asegurar que el mapa ocupe toda la ventana del navegador.
+           Se asegura que tanto el html como el body tienen 100% de altura y no
+           tengan margen ni padding, lo que permite que el mapa se expanda completamente. */
+
+        body {
+            text-align: justify;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .anchogeomap {
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 80vh;
+        }
+
+        .geomap {
+            border: 1px solid #000;
+            width: 80vh;
+            height: 80vh;
+
+            /* Borde del canvas */
+        }
+
+        .texto {
+            padding: 0vh 70vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="texto">
+        <div class="anchotexto">
+
+            <b>La API de Google Maps</b>
+            <p>Es una colección de servicios que permite integrar los mapas de Google y su
+                funcionalidad en aplicaciones web y móviles. Ofrece herramientas avanzadas para trabajar con datos
+                geográficos,
+                lo que facilita a los desarrolladores incluir mapas interactivos, rutas, y geolocalización en sus sitios
+                o
+                aplicaciones.</p>
+            <h2>Aplicaciones de la API</h2>
+            <lu>
+                <li>
+                    <b>Mapas interactivos:</b>
+                    <p>Permite mostrar mapas personalizables en una página web. Se puede ajustar el nivel de zoom, el
+                        tipo
+                        de mapa
+                        (como satélite, híbrido, relieve), y agregar controles de navegación.</p>
+                </li>
+                <li>
+                    <b>Marcadores (Markers):</b>
+                    <p> pueden agregar marcadores en ubicaciones específicas dentro del mapa, útiles para destacar
+                        puntos
+                        de
+                        interés como oficinas, tiendas, o monumentos.</p>
+                </li>
+                <li>
+                    <b>Rutas y direcciones:</b>
+                    <p> A través de la API de Directions, puedes mostrar rutas de conducción, caminata, ciclismo, o
+                        transporte
+                        público entre dos o más puntos en el mapa, incluyendo estimaciones de tiempo y distancia.</p>
+                </li>
+                <li> <b>Geocodificación y geolocalización:</b>
+                    <ol>
+                        <li>
+                            <b>Geocodificación:</b>
+                            <p> La Geocodificación permite convertir direcciones físicas en coordenadas geográficas
+                                (latitud
+                                y
+                                longitud)
+                                y
+                                viceversa.</p>
+                        </li>
+                        <li>
+                            <b>Geolocalización</b>
+                            <p> Permite detectar la ubicación del usuario para mostrarle información o servicios locales
+                                relevantes.</p>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <b>Estilización de mapas:</b>
+                    <p> Los mapas pueden ser personalizados con diferentes colores, estilos de etiquetas y
+                        características
+                        visuales,
+                        para que se adapten al diseño de tu sitio web.</p>
+                </li>
+                <li>
+                    <b>Street View:</b>
+                    <p> Es posible integrar el modo de Street View para permitir que los usuarios exploren ubicaciones
+                        específicas
+                        con imágenes a nivel de calle de 360 grados.</p>
+
+                </li>
+                <li>
+                    <b>Mapas de calor (Heatmaps):</b>
+                    <p> La API permite crear mapas de calor que muestran patrones o concentraciones de datos
+                        geográficos,
+                        como
+                        densidad de población, tráfico o actividad comercial.</p>
+                </li>
+                <li>
+                    <b>Cálculo de distancias y áreas:</b>
+                    <p> Con la API, puedes calcular la distancia entre dos o más puntos, o el área de una región
+                        específica,
+                        lo cual
+                        es útil en aplicaciones de logística, bienes raíces, o planificación de viajes.</p>
+                </li>
+
+            </lu>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="anchogeomap">
+        <div class="geomap">
+            <!-- Este componente "gmp-map" es el contenedor principal donde se mostrará el mapa de Google.
+         Atributos:
+         - "center": Coordenadas en latitud y longitud donde se centrará el mapa.
+         - "zoom": El nivel de zoom del mapa, en este caso, se usa un zoom de 18, lo cual es muy cercano.
+         - "map-id": Un identificador opcional para el mapa, utilizado para personalizar su apariencia o configuración. -->
+            <gmp-map center="37.45803451538086,-3.9202511310577393" zoom="18" map-id="DEMO_MAP_ID">
+
+                <!-- Este es el marcador avanzado que se coloca en el mapa.
+             Atributos:
+             - "position": Define la posición del marcador usando latitud y longitud.
+             - "title": Es el texto que se muestra cuando el usuario pasa el cursor sobre el marcador. 
+               En este caso, indica "My location" (Mi ubicación). -->
+                <gmp-advanced-marker position="37.45803451538086,-3.9202511310577393"
+                    title="My location"></gmp-advanced-marker>
+            </gmp-map>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        body {
+            text-align: justify;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .anchoembeb {
+            text-align: justify;
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 130vh;
+        }
+
+        .textoembeb {
+            width: 60%;
+        }
+
+        .anchotextolocal {
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 100vh;
+        }
+
+        .textolocal {
+
+            padding: 20px;
+            width: 60%;
+        }
+
+        .videos h1 {
+            text-align: center;
+        }
+
+        .anchoiframe {
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 70vh;
+
+        }
+
+        .anchovideolocal {
+
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 70vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="videos">
+        <h1>Insercion de videos</h1>
+        <!-- Incrustación del video de YouTube -->
+        <div class="anchoembeb">
+            <div class="textoembeb">
+                <p><b>HTML permite incrustar videos de YouTube</b>usando la etiqueta (iframe), lo que proporciona un
+                    reproductor con controles integrados (play, pause, volumen, pantalla completa) sin necesidad de
+                    configuraciones adicionales.</p>
+                <h4>Posibilidades al incrustar videos de YouTube:</h4>
+                <ul>
+                    <li>
+                        <p><b>Controles:</b>Se pueden mostrar (controls=1) u ocultar (controls=0).
+                        </p>
+                    </li>
+
+                    <li>
+                        <p><b>Autoplay:</b>Permite iniciar la reproducción automáticamente (autoplay=1), aunque muchos
+                            navegadores lo bloquean por defecto.</p>
+                    </li>
+                    <li>
+                        <p><b>Repetición (loop):</b> Se puede habilitar para que el video se repita.</p>
+                    </li>
+                    <li>
+                        <p><b>Inicio específico:</b>Con start=xx, se puede definir el tiempo de inicio del video.</p>
+                    </li>
+                    <li>
+                        <p><b>Pantalla completa:</b> Con el atributo allowfullscreen, el usuario puede expandir el
+                            video.
+                        </p>
+                    </li>
+                    <li>
+                        <p><b>Ajustes de tamaño:</b> Se pueden cambiar las dimensiones del reproductor usando los
+                            atributos
+                            de ancho y alto.</p>
+                    </li>
+                </ul>
+                <h4>Ventajas</h4>
+                <ul>
+                    <li>
+                        <p><b>Rendimiento:</b>No se necesita almacenar el video en tu servidor, lo que reduce el uso de
+                            ancho de banda.</p>
+                    </li>
+                    <li>
+                        <p><b>Interactividad:</b>Incluye automáticamente funcionalidades como comentarios y
+                            recomendaciones.</p>
+                    </li>
+                    <li>
+                        <p><b>SEO: </b>SEO: Mejora el posicionamiento en buscadores gracias al contenido multimedia.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="anchoiframe">
+            <div class="iframevideo">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="anchotextolocal">
+
+            <div class="textolocal">
+                <h3> Añadir un video en local</h3>
+                <p>Para añadir un video de manera local (almacenado en tu servidor o computadora), se utiliza la
+                    etiqueta (video). Esto permite tener un mayor control sobre la reproducción y los controles. Aquí
+                    hay un ejemplo simple:</p>
+                <h5>ventajas de los videos locales: </h5>
+                <ul>
+                    <li>
+                        <p><b>Control total: </b>Puedes personalizar los controles y la apariencia.</p>
+                    </li>
+                    <li>
+                        <p><b>Sin dependencia de terceros:</b>No estás sujeto a restricciones de acceso o disponibilidad
+                            de plataformas externas.</p>
+                    </li>
+                </ul>
+                <h5>Consideraciones: </h5>
+                <ul>
+                    <li>
+                        <p><b>Tamaño del archivo: </b>Asegúrate de que el archivo no sea demasiado grande para evitar
+                            tiempos de carga lentos.</p>
+                    </li>
+                    <li>
+                        <p><b>Compatibilidad: </b>Debes considerar varios formatos (MP4, WebM, Ogg) para asegurar la
+                            compatibilidad con diferentes navegadores.</p>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="anchovideolocal">
+            <div class="vidolocal">
+
+                <video width="560" height="315" controls>
+                    <source src="../Video/SortinAlgorim.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

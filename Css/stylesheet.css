@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/fondo.jpg');
+    /* Ruta de la imagen */
+    background-size: cover;
+    /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center;
+    /* Centra la imagen */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+}
+
+nav a {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+
+.navegador {
+    background-color: #282828;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+
+}
+
+
+
+.navegador-izquierda {
+    height: 110px;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    /* Crear el efecto de difuminado redondo */
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+}
+
+.navegador-derecha {
+    margin: 0;
+    padding: 0;
+    height: 110px;
+    width: 60%;
+
+}
+
+.navegador-derecha ul {
+    position: relative;
+    left: 50%;
+    float: left;
+}
+
+.navegador-derecha ul li {
+    color: white;
+    list-style: none;
+    float: left;
+    position: relative;
+    right: 50%;
+    margin: 10px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.navegador-derecha ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navegador-derecha ul li a:hover {
+    color: rgb(92, 145, 206);
+    transition: .4s;
+}
+
+.vista h1 {
+
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.vista p {
+
+    text-align: center;
+    padding: 40px 20%;
+    text-align: justify;
+}
+
+
+.contenido {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+.anchoContenido {
+    background-color: #f4f4f448;
+    border: 1px solid #dddddd5b;
+    border-radius: 10px;
+    width: 65%;
+    transition: height 0.3s ease;
+    padding: 20px 20px;
+}

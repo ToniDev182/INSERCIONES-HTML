@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserción de Audios</title>
+    <style>
+        body {
+            text-align: justify;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .anchoembeb {
+            text-align: justify;
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 140vh;
+        }
+
+        .textoembeb {
+            width: 60%;
+        }
+
+        .anchotextolocal {
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 50vh;
+        }
+
+        .textolocal {
+            padding: 20px;
+            width: 60%;
+        }
+
+        .audios h1 {
+            text-align: center;
+        }
+
+        .anchoaudio {
+            padding: 20px 40px;
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+            height: 80vh;
+        }
+
+        .audio {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="audios">
+        <h1>Inserción de Audios</h1>
+        <div class="anchoembeb">
+            <div class="textoembeb">
+                <p><b>HTML permite incrustar archivos de audio</b> usando la etiqueta <code>&lt;audio&gt;</code>, lo que
+                    proporciona un reproductor integrado que facilita la reproducción de música, efectos de sonido o
+                    cualquier otro tipo de contenido de audio.</p>
+                <h4>Posibilidades al incrustar audios en HTML:</h4>
+                <ul>
+                    <li>
+                        <p><b>Controles:</b> Puedes habilitar controles para reproducir, pausar y ajustar el volumen
+                            del audio utilizando el atributo <code>controls</code>.</p>
+                    </li>
+                    <li>
+                        <p><b>Autoplay:</b> Permite que el audio se reproduzca automáticamente al cargar la página con
+                            <code>autoplay</code>, aunque muchos navegadores limitan esta función.
+                        </p>
+                    </li>
+                    <li>
+                        <p><b>Loop:</b> Puedes hacer que el audio se repita continuamente al usar el atributo
+                            <code>loop</code>.
+                        </p>
+                    </li>
+                    <li>
+                        <p><b>Formato múltiple:</b> Se pueden especificar diferentes fuentes de audio para garantizar
+                            la compatibilidad con varios navegadores.</p>
+                    </li>
+                </ul>
+                <h4>Ventajas de incrustar audios:</h4>
+                <ul>
+                    <li>
+                        <p><b>Interactividad:</b> El reproductor incluye controles estándar, lo que mejora la
+                            experiencia del usuario.</p>
+                    </li>
+                    <li>
+                        <p><b>Rendimiento:</b> No necesitas alojar el audio en un servidor externo, lo que reduce el
+                            uso de ancho de banda si decides alojarlo localmente.</p>
+                    </li>
+                    <li>
+                        <p><b>SEO:</b> Al igual que con los videos, el contenido de audio puede contribuir al SEO del
+                            sitio web.</p>
+                    </li>
+                </ul>
+                <h4>Limitaciones:</h4>
+                <ul>
+                    <li>
+                        <p><b>Personalización de controles:</b> Los controles visuales del reproductor de audio no se
+                            pueden modificar sin usar CSS o JavaScript.</p>
+                    </li>
+                    <li>
+                        <p><b>Dependencia de la fuente externa:</b> Si usas un enlace de audio, la disponibilidad del
+                            archivo dependerá del servidor que lo aloje.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="anchoaudio">
+            <div class="audio">
+                <h3>Ejemplo de audio usando URL</h3>
+                <div class="audio">
+                    <h3>Escuchar "Better Days" de Bensound</h3>
+                    <audio controls>
+                        <source src="https://www.bensound.com/bensound-music/bensound-betterdays.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+
+
+                <h3>Ejemplo de audio de manera local</h3>
+                <audio controls>
+                    <source src="../audio/Sofia X Veridis Quo - Daft Punk ft. Clairo.mp3" type="audio/mp3">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+        <div class="anchotextolocal">
+            <div class="textolocal">
+                <h5>Consideraciones al usar audio local:</h5>
+                <ul>
+                    <li>
+                        <p><b>Formatos:</b> Es recomendable proporcionar diferentes formatos (MP3, OGG, WAV) para
+                            asegurar la compatibilidad con diversos navegadores.</p>
+                    </li>
+                    <li>
+                        <p><b>Tamaño del archivo:</b> Asegúrate de que el archivo no sea demasiado pesado para
+                            evitar tiempos de carga lentos.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

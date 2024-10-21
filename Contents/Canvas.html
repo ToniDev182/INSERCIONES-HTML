@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra Rebotando</title>
+    <style>
+        body {
+            text-align: justify;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+
+        }
+
+        .anchoCanva {
+            justify-content: center;
+            flex-direction: row;
+            display: flex;
+        }
+
+        canvas {
+            border: 1px solid #000;
+
+            /* Borde del canvas */
+        }
+
+        .texto {
+            padding: 0vh 70vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="texto">
+        <h2>¿Que es canvas?</h2>
+
+        <p><b>Canvas: </b>es un elemento de HTML5 que permite dibujar gráficos, renderizar imágenes y crear animaciones
+            directamente en una página web, utilizando JavaScript. Es un lienzo donde se puede controlar cada pixel, lo
+            que
+            lo hace ideal para crear contenido gráfico dinámico e interactivo.</p>
+
+        <h4>Principales usos del elemento</h4>
+
+        <p><b>Gráficos 2D: </b>Se puede dibujar líneas, rectángulos, círculos, texto y más, todo en el navegador.</p>
+        <p><b>Animaciones: </b>Canvas es excelente para animaciones personalizadas en tiempo real.</p>
+        <p><b>Visualización de datos:</b> Generar gráficos y diagramas interactivos, como gráficas de barras, líneas o
+            tortas.</p>
+        <p><b>Juegos: </b>Desarrollo de juegos basados en navegador, permitiendo un control total sobre los elementos
+            gráficos.</p>
+        <p><b>Procesamiento de imágenes: </b>Modificación y manipulación de imágenes, como filtros, recortes o cambios
+            de
+            color.</p>
+        <p><b>Simulaciones y Modelado: </b>Crear simulaciones físicas o interactivas que respondan a la entrada del
+            usuario.
+        </p>
+        <p><b>Edición de gráficos: </b>Aplicaciones que permiten al usuario dibujar o editar imágenes directamente en la
+            página web.</p>
+    </div>
+
+    <div class="anchoCanva">
+
+        <canvas id="miCanvas" width="500" height="400"></canvas>
+        <script>
+            const canvas = document.getElementById('miCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Propiedades de la Tierra
+            let tierra = {
+                x: 50, // Posición x inicial de la Tierra
+                y: 50, // Posición y inicial de la Tierra
+                radio: 50, // Radio de la Tierra
+                dx: 3, // Velocidad en x
+                dy: 2 // Velocidad en y
+            };
+
+            // Cargar imagen de la textura de la Tierra (sin fondo)
+            const imagenTierra = new Image();
+            imagenTierra.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Earth_Eastern_Hemisphere.jpg/600px-Earth_Eastern_Hemisphere.jpg'; // Imagen de la Tierra sin fondo
+
+            // Función para dibujar la Tierra
+            function drawTierra() {
+                // Dibujar la Tierra usando la textura cargada
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(tierra.x, tierra.y, tierra.radio, 0, Math.PI * 2); // Dibuja el contorno de la Tierra
+                ctx.clip(); // Recorta la imagen dentro del círculo
+                ctx.drawImage(imagenTierra, tierra.x - tierra.radio, tierra.y - tierra.radio, tierra.radio * 2, tierra.radio * 2); // Dibujar la imagen
+                ctx.restore(); // Restablece el contexto
+            }
+
+            // Función para dibujar los bordes del canvas
+            function drawBorders() {
+                ctx.strokeStyle = 'black'; // Color del borde
+                ctx.lineWidth = 4; // Ancho del borde
+                ctx.strokeRect(0, 0, canvas.width, canvas.height); // Dibuja el borde del canvas
+            }
+
+            // Función para actualizar la posición de la Tierra
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia el canvas
+                drawBorders(); // Dibuja los bordes
+                drawTierra(); // Dibuja la Tierra
+
+                // Actualiza la posición de la Tierra
+                tierra.x += tierra.dx;
+                tierra.y += tierra.dy;
+
+                // Rebotar en las paredes
+                if (tierra.x + tierra.radio > canvas.width || tierra.x - tierra.radio < 0) {
+                    tierra.dx = -tierra.dx; // Invierte la dirección en x
+                }
+                if (tierra.y + tierra.radio > canvas.height || tierra.y - tierra.radio < 0) {
+                    tierra.dy = -tierra.dy; // Invierte la dirección en y
+                }
+            }
+
+            // Animación
+            function animate() {
+                update(); // Actualiza la posición
+                requestAnimationFrame(animate); // Llama a la función de animación
+            }
+
+            // Inicia la animación una vez que la imagen esté cargada
+            imagenTierra.onload = function () {
+                animate();
+            };
+        </script>
+    </div>
+</body>
+
+</html>
